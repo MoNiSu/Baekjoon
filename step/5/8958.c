@@ -40,7 +40,6 @@ int main(void) {
     scanf("%s", b);
     c = 0;
     d = 0;
-    i = 0;
     for (int j = 0; j < 80; j++) {
       if (b[j] == '\0') {
         break;
