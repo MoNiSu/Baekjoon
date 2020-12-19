@@ -26,23 +26,22 @@
 */
 
 #include <stdio.h>
-#include <string.h>
 
 int main(void) {
-  char string[1000000] = { 0 };
+  char string[1000000];
   int n = 0;
   
 
-  scanf("%s", string);
+  scanf("%[^\n]s", string);
 
   for (int i = 0; i < 1000000; i++) {
-    if (strcmp(string[i], "\0")) {
+    if (string[i] != '\0') {
       if (i != 0) {
-        if (!strcmp(string[i - 1], " ") && !strcmp(string[i], " ")) {
+        if (string[i - 1] == ' ' && string[i] != ' ') {
           ++n;
         }
       } else {
-        if (strcmp(string[i], "\0")) {
+        if (string[i] != ' ') {
           ++n;
         }
       }
